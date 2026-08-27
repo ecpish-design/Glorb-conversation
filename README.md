@@ -1,49 +1,49 @@
-# GLORB // Conversation Mission — Rebuild
+# GLORB // Conversation Mission — Iteration 2
 
-A new, static GitHub Pages-ready rebuild of the Conversation Mission.
+A GitHub Pages-ready, accessible learning experience for explicit teaching and structured practice of strategies used to start, join and end conversations.
 
-## What is included
+## Learning sequence
 
-- 35-screen learner journey based on the approved rebuild map
-- Story → explicit teaching → whole rule → model → practise → explanatory feedback structure for START, JOIN and END
-- START: GREET → OPEN → NOTICE
-- JOIN: LISTEN → WAIT → CONNECT
-- END: SIGNAL → FINISH PHRASE → EXIT
-- Final integrated Conversation Mission
-- Adult More Information panel with curriculum, evidence, disclaimers and references
-- Read Aloud using the browser Speech Synthesis API
-- Small typewriter-style on-screen text effect across lesson screens, with reduced-motion fallback
-- Transcript/replay support for the JOIN timing activity
-- Keyboard-accessible native controls and visible focus styles
-- Reduced-motion support
-- Non-drag END sequencing
-- No localStorage, sessionStorage, account, database or analytics
-- Certificate that records exactly what was practised, without claiming mastery
+START: Greet → Open → Notice  
+JOIN: Listen → Wait → Connect  
+END: Signal → Finish Phrase → Exit
 
-## Run locally
+Each mission follows: incident → teach each step → put the steps together → model → practise → explanatory feedback → mission complete.
 
-Open `index.html` directly, or serve the folder:
+The final Conversation Mission brings START, JOIN and END together, then the learner chooses one small real-world goal and receives a detailed completion certificate.
 
-```bash
-python3 -m http.server 8000
-```
+## Iteration 2 changes
 
-Then open http://localhost:8000
+- Reworked branding to sit beside the GLORB Listening Mission while retaining the original Conversation Mission's Zorbax/radar identity.
+- Restored the opening radar / transmission sequence.
+- Removed the typewriter effect completely.
+- Designed every learner screen to remain within a single viewport. There is no page scrolling; content is split into additional screens where needed.
+- Uses the latest uploaded Conversation Mission asset pack.
+- All illustrated assets appear on light white/cream cards.
+- Rebuilt story screens around Incident 01, Incident 02 and Incident 03.
+- Simplified learner-facing language for Years 5–6.
+- Removed learner-facing technical terms such as “protocol”, “variables” and “procedures”.
+- Kept Read Aloud and contextual Help.
+- Removed the typed Quick Review section completely.
+- Correct answer placement is deliberately mixed across assessment tasks.
+- START distractors retain the grey TRIED behaviour.
+- END sequencing keeps incorrectly chosen steps available for later positions, so the task cannot lock itself.
+- END summary uses the END strip only.
+- Adult information now uses About, Learning, Curriculum, Evidence + References, and Use + Interpretation.
+- Skillstreaming is retained in the reference base rather than presented as a separate evidence card.
+- Certificate content is retained but redesigned to fit on one screen and print to one A4 page.
 
-## Publish to GitHub Pages
+## Files
 
-1. Create a new GitHub repository.
-2. Upload the contents of this folder to the repository root.
-3. Commit and push.
-4. In GitHub: **Settings → Pages → Deploy from a branch**.
-5. Choose `main` and `/ (root)`.
+- `index.html`
+- `styles.css`
+- `app.js`
+- `assets/ui/` — semantic filenames used by the game
+- `assets/updated-asset-library/` — exact numbered files from the latest uploaded asset pack
+- `assets/ASSET-INVENTORY.md`
 
-## Asset folders
+## GitHub Pages
 
-- `assets/ui/` contains the clean filenames used by the rebuilt interface.
-- `assets/source-library/` contains the supplied Conversation Mission image library copied into the project so the original visual material remains with the build.
-- `assets/ASSET-INVENTORY.md` summarises the key UI and scenario assets used by the lesson.
+Create a new repository, upload the contents of this folder to the repository root, then enable GitHub Pages from the main branch/root directory.
 
-## Important educational position
-
-This is an explicit-teaching and structured-practice aid. It is not a real-life conversation, diagnostic assessment, validated measure of conversational competence, or replacement for responsive in-person teaching. Use alongside modelling, discussion, rehearsal, natural practice opportunities and observation where possible.
+No backend, account, cookies or persistent learner storage are required.
