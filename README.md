@@ -47,3 +47,20 @@ The final Conversation Mission brings START, JOIN and END together, then the lea
 Create a new repository, upload the contents of this folder to the repository root, then enable GitHub Pages from the main branch/root directory.
 
 No backend, account, cookies or persistent learner storage are required.
+
+## Iteration 3 polish
+- clearer opening introduction with Glorb + Earth Expert registration
+- calmer colour hierarchy and reduced visual noise
+- clearer separation between dialogue and teaching-analysis cards
+- improved START/JOIN model layouts and type scale
+- corrected/normalised individual strategy icon assets, including EXIT
+- no typewriter effect
+- no Quick Review typed-answer section
+- learner screens remain fixed to one viewport with no intended scrolling
+
+
+## Iteration 5 final edits
+- Registration now uses the close-up Glorb portrait.
+- START practice has clearer instructions and GLORB'S START preview.
+- JOIN timing mini-game removed; JOIN goes straight to the single response-choice practice.
+- Interactive task screens use a distinct blue YOUR TURN treatment.

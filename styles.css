@@ -37,3 +37,170 @@ button,input{font:inherit}.stars{position:fixed;inset:0;pointer-events:none;opac
 @media(max-height:680px){h1{font-size:clamp(1.8rem,4.8vw,3.3rem)}.content-pad{padding:16px}.screen{padding:7px}.lead{font-size:.9rem}.copy{font-size:.78rem}.teach-card,.key-line{margin:6px 0;padding:8px}.teach-visual,.strip-card{height:40vh}.complete-card{padding:18px}.complete-card h1{font-size:2rem}.certificate{padding:9px}.certificate-intro{font-size:.68rem}.cert-skill p{font-size:.59rem}.dialog{height:94dvh}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.radar-sweep{display:none}}
 @media print{html,body{overflow:visible;background:white;color:black}.topbar,.progress-shell,.stars,.scanlines,.certificate-actions{display:none!important}.app-shell{position:static;overflow:visible}.screen{padding:0;height:auto;display:block}.certificate-wrap{width:100%;height:auto}.certificate{box-shadow:none;border:0;padding:7mm 9mm;height:277mm;display:grid;grid-template-rows:auto auto auto 1fr auto}.certificate h1{font-size:25pt}.certificate-name{font-size:22pt}.certificate-intro{font-size:9.5pt}.cert-skill h3{font-size:11pt}.cert-skill p{font-size:8.5pt}.cert-goal{font-size:9pt}.cert-footer{font-size:7pt}@page{size:A4 portrait;margin:8mm}}
+
+/* =========================================================
+   ITERATION 3 — READABILITY / CALM VISUAL HIERARCHY
+   ========================================================= */
+h1:focus,h2:focus,h3:focus{outline:none}
+
+.registration{grid-template-columns:minmax(0,1.08fr) minmax(240px,.72fr);gap:clamp(24px,4vw,54px)}
+.registration-card{padding:clamp(28px,4.2vw,48px);border-radius:14px}
+.registration-card .eyebrow{margin-bottom:10px}
+.registration-card h1{font-size:clamp(2.5rem,4.5vw,4rem);line-height:1;max-width:760px;margin-bottom:18px}
+.registration-card .lead{max-width:720px;font-size:clamp(1rem,1.45vw,1.24rem);line-height:1.45;margin-bottom:12px}
+.registration-problem{padding:12px 14px;border-left:4px solid var(--orange);background:#fff8ee}
+.registration-visual{height:min(60vh,500px);display:grid;place-items:center}
+.registration-visual .asset-card{height:100%;width:100%;background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important}
+.registration-visual img{max-height:100%;max-width:82%}
+
+/* calmer teaching screens */
+.teach-layout{grid-template-columns:minmax(0,1.08fr) minmax(300px,.78fr);gap:clamp(22px,3.4vw,44px)}
+.teach-copy h1{font-size:clamp(2.2rem,4vw,3.6rem);margin-bottom:14px}
+.teach-copy .lead{font-size:clamp(1rem,1.45vw,1.22rem);line-height:1.45;margin-bottom:12px}
+.teach-card{margin:8px 0;padding:11px 14px;background:#fff;border-color:#dfe1df;font-size:clamp(.9rem,1.12vw,1rem);line-height:1.42}
+.key-line{margin-top:10px;padding:11px 14px;font-size:clamp(.95rem,1.35vw,1.14rem);border-width:1.5px}
+.teach-visual{height:min(52vh,440px)}
+.teach-visual .asset-card{background:#fffdf8}
+
+/* models: dialogue and analysis must read as two different zones */
+.model-layout{grid-template-columns:minmax(0,1.05fr) minmax(320px,.82fr);gap:clamp(22px,3vw,38px);align-items:center}
+.model-layout h1{font-size:clamp(2.25rem,4vw,3.65rem);margin-bottom:16px}
+.conversation-card{gap:9px;padding:14px;border:1px solid #dedfdc;border-radius:14px;background:#faf8f2}
+.bubble{padding:12px 15px;background:white;border-color:#d9dcdf;color:var(--ink)}
+.bubble.alt{margin-left:12%;background:#eaf2f8;border-color:#cbd9e5}
+.pause-box{padding:9px;border-width:1.5px;background:#fffaf5}
+.glorb-note.light{margin-top:10px;padding:10px 13px;background:#f5ead8;border-left-width:3px;font-size:.92rem}
+.model-cards{gap:10px;padding:14px;border-radius:14px;background:#eef1f4;border:1px solid #d7dde2}
+.model-card{padding:13px 14px;background:#fff!important;border:1px solid #d6dadd;border-left-width:6px;font-size:clamp(.9rem,1.15vw,1.02rem);line-height:1.38}
+.model-card.start-c1,.model-card.join-c1,.model-card.end-c1{border-left-color:#5b8fb8}
+.model-card.start-c2,.model-card.join-c2,.model-card.end-c2{border-left-color:#d58a42}
+.model-card.start-c3,.model-card.join-c3,.model-card.end-c3{border-left-color:#6e9c72}
+.model-card strong{color:#243246;margin-bottom:5px}
+
+/* keep step-summary panels distinguishable without flooding the screen with colour */
+.step-summary>div{background:#fff!important;border:1px solid #d7dadd;border-top-width:5px}
+.step-summary>div:nth-child(1){border-top-color:#5b8fb8}
+.step-summary>div:nth-child(2){border-top-color:#d58a42}
+.step-summary>div:nth-child(3){border-top-color:#6e9c72}
+
+/* tighter type scale across dense screens */
+.assessment-head h1,.final-map h1,.final-mission-layout h1{font-size:clamp(2.05rem,3.8vw,3.45rem)}
+.complete-card h1{font-size:clamp(2.15rem,4vw,3.7rem)}
+
+/* keep every learner state inside the viewport */
+.screen-shell{max-height:100%}
+.content-pad{overflow:hidden}
+
+@media(max-width:900px){
+  .registration-card{padding:22px}
+  .registration-card h1{font-size:clamp(2.15rem,5vw,3rem)}
+  .registration-card .lead{font-size:.96rem}
+  .model-layout h1,.teach-copy h1{font-size:clamp(2rem,4.5vw,3rem)}
+  .model-cards,.conversation-card{padding:10px}
+}
+
+@media(max-width:700px){
+  .registration{grid-template-columns:minmax(0,1fr) minmax(120px,.42fr)}
+  .registration-card{padding:13px 14px}
+  .registration-card .eyebrow{margin-bottom:5px;font-size:.52rem}
+  .registration-card h1{font-size:1.85rem;margin-bottom:8px}
+  .registration-card .lead{font-size:.78rem;line-height:1.3;margin-bottom:6px}
+  .registration-problem{padding:7px 9px}
+  .registration-visual{height:38vh}
+  .name-field{margin-top:7px}.name-field label{font-size:.75rem}.name-field input{height:42px;font-size:.88rem}
+  .model-layout,.teach-layout{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr)}
+  .model-layout h1,.teach-copy h1{font-size:1.62rem;margin-bottom:7px}
+  .conversation-card,.model-cards{padding:7px;gap:5px}
+  .bubble,.model-card{padding:7px 8px;font-size:.69rem;line-height:1.25}
+  .bubble .speaker,.model-card strong{font-size:.56rem}
+  .pause-box{padding:6px;font-size:.68rem}
+  .glorb-note.light{font-size:.68rem;padding:7px 8px;margin-top:5px}
+  .teach-copy .lead{font-size:.73rem;margin-bottom:5px}.teach-card{font-size:.68rem;line-height:1.25;padding:6px 7px;margin:4px 0}.key-line{font-size:.7rem;padding:6px 7px;margin-top:5px}
+  .teach-visual{height:38vh}
+}
+
+@media(max-height:680px){
+  .registration-card h1{font-size:2rem}.registration-card .lead{font-size:.82rem}.registration-problem{padding:8px 10px}
+  .model-layout h1,.teach-copy h1{font-size:1.8rem}.conversation-card,.model-cards{padding:8px}.bubble,.model-card{padding:8px;font-size:.76rem}
+  .glorb-note.light{font-size:.74rem}
+}
+
+/* Iteration 4 */
+.nav-btn:disabled{opacity:.28;cursor:not-allowed;border-color:rgba(255,255,255,.18)}
+.registration-visual img{max-width:100%;max-height:100%}
+.story-shell{grid-template-columns:.98fr 1.02fr}.story-copy{order:1}.story-visual{order:2}
+.choice-example{display:block;margin-top:5px;font-size:.86em;font-weight:500;color:#59616b}
+.timing-simple{grid-template-columns:1.08fr .92fr;align-items:center}.timing-conversation{margin-top:14px}.timing-question{display:grid;gap:12px;padding:16px;border:1px solid #d7dadd;border-radius:14px;background:#fff}.timing-question h2{margin:0;font-size:clamp(1.15rem,2vw,1.65rem)}.timing-answer-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.support-actions{display:flex;gap:8px}.support-actions .ghost{font-size:.85rem;padding:9px 12px}
+.goal-screen{width:100%;display:flex;flex-direction:column;justify-content:center}.own-goal{margin-top:12px;padding:13px 15px;background:#fff;border:1px solid #d3d8dd;border-radius:12px;display:grid;grid-template-columns:.8fr 1.8fr;gap:14px;align-items:center}.own-goal label{display:grid;gap:4px}.own-goal label strong{font:800 .76rem "IBM Plex Mono",monospace;letter-spacing:.06em}.own-goal label span{font-size:.86rem}.own-goal input{height:52px;width:100%;border:2px solid #c9d0d7;border-radius:8px;padding:0 13px;font-weight:600;background:#fff;color:var(--ink)}.own-goal input:focus{outline:3px solid rgba(239,116,68,.28);border-color:var(--orange)}
+@media(max-width:900px){.tools{gap:6px}.tool-btn{padding:0 11px}.story-shell{grid-template-columns:1.12fr .88fr}.timing-simple{grid-template-columns:1fr 1fr}.own-goal{grid-template-columns:1fr 1.4fr}}
+@media(max-width:700px){.story-shell{grid-template-columns:1.2fr .8fr}.story-copy{padding:12px}.story-visual{padding:8px}.timing-simple{grid-template-columns:1fr 1fr}.timing-question{padding:9px;gap:7px}.timing-answer-grid{gap:5px}.support-actions{gap:5px}.support-actions .ghost{font-size:.67rem;padding:7px}.own-goal{grid-template-columns:.8fr 1.4fr;padding:8px;gap:7px}.own-goal label span{font-size:.68rem}.own-goal input{height:42px;font-size:.72rem}.goal-screen .lead{font-size:.85rem}.goal-screen .copy{font-size:.72rem}.goal-screen .actions{margin-top:6px}}
+
+/* =========================================================
+   ITERATION 5 — CLEAR INTERACTIVE / YOUR TURN STATES
+   ========================================================= */
+.screen-shell.activity-shell{
+  background:#e7f1f5;
+  border:2px solid #97b8c8;
+  box-shadow:0 24px 70px rgba(0,0,0,.28), inset 0 0 0 1px rgba(255,255,255,.65);
+}
+.activity-shell .content-pad{
+  background:linear-gradient(145deg,#edf6f8 0%,#e5f0f4 100%);
+  border-radius:16px;
+}
+.activity-kicker{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  padding:6px 10px;
+  margin-bottom:8px;
+  border-radius:999px;
+  background:var(--navy);
+  color:#fff;
+  letter-spacing:.13em;
+}
+.activity-instruction{
+  margin:4px 0 14px;
+  font-size:clamp(.9rem,1.3vw,1.08rem);
+  line-height:1.45;
+  color:#344354;
+}
+.activity-instruction strong{color:var(--ink)}
+.activity-instruction span{font-size:.92em;color:#526270}
+.activity-shell .builder-step,
+.activity-shell .timing-question,
+.activity-shell .sequence-options,
+.activity-shell .sequence-slots,
+.activity-shell .own-goal{
+  background:rgba(255,255,255,.72);
+}
+.activity-shell .choice,
+.activity-shell .transfer-card,
+.activity-shell .own-goal{
+  border-color:#9eb7c4;
+}
+.activity-shell .choice:not(:disabled):hover,
+.activity-shell .transfer-card:not(:disabled):hover{
+  border-color:var(--navy);
+  box-shadow:0 0 0 3px rgba(12,29,52,.08);
+}
+.activity-shell .primary{box-shadow:0 4px 0 rgba(4,13,24,.15)}
+.activity-shell .topic-banner{background:#d5e8ef;border-color:#9bbbc8;color:#173047}
+.activity-shell .slot{background:#f8fcfd;border-color:#8faeba}
+.activity-shell .slot.filled{background:#e4f3ea;border-color:#5f9c7b}
+.activity-shell .preview{background:#0f2944;color:white;border-color:#0f2944}
+
+/* Use the same close-up portrait on both welcome screens. */
+.registration-visual img{max-width:82%;max-height:88%;object-fit:contain}
+
+@media(max-width:700px){
+  .activity-kicker{font-size:.5rem;padding:4px 7px;margin-bottom:4px}
+  .activity-instruction{font-size:.68rem;line-height:1.3;margin:2px 0 7px}
+  .registration-visual img{max-width:96%;max-height:92%}
+}
+/* Registration portrait also stays on the same light image card as the transmission portrait. */
+.registration-visual .asset-card{
+  background:#fffdf8!important;
+  border:1px solid #dfddd5!important;
+  border-radius:16px!important;
+  padding:clamp(10px,1.6vw,20px)!important;
+}
