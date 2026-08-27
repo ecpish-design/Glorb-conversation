@@ -57,3 +57,10 @@ No backend, account, cookies or persistent learner storage are required.
 - no typewriter effect
 - no Quick Review typed-answer section
 - learner screens remain fixed to one viewport with no intended scrolling
+
+
+## Iteration 5 final edits
+- Registration now uses the close-up Glorb portrait.
+- START practice has clearer instructions and GLORB'S START preview.
+- JOIN timing mini-game removed; JOIN goes straight to the single response-choice practice.
+- Interactive task screens use a distinct blue YOUR TURN treatment.

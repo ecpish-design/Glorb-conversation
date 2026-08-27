@@ -134,3 +134,73 @@ h1:focus,h2:focus,h3:focus{outline:none}
 .goal-screen{width:100%;display:flex;flex-direction:column;justify-content:center}.own-goal{margin-top:12px;padding:13px 15px;background:#fff;border:1px solid #d3d8dd;border-radius:12px;display:grid;grid-template-columns:.8fr 1.8fr;gap:14px;align-items:center}.own-goal label{display:grid;gap:4px}.own-goal label strong{font:800 .76rem "IBM Plex Mono",monospace;letter-spacing:.06em}.own-goal label span{font-size:.86rem}.own-goal input{height:52px;width:100%;border:2px solid #c9d0d7;border-radius:8px;padding:0 13px;font-weight:600;background:#fff;color:var(--ink)}.own-goal input:focus{outline:3px solid rgba(239,116,68,.28);border-color:var(--orange)}
 @media(max-width:900px){.tools{gap:6px}.tool-btn{padding:0 11px}.story-shell{grid-template-columns:1.12fr .88fr}.timing-simple{grid-template-columns:1fr 1fr}.own-goal{grid-template-columns:1fr 1.4fr}}
 @media(max-width:700px){.story-shell{grid-template-columns:1.2fr .8fr}.story-copy{padding:12px}.story-visual{padding:8px}.timing-simple{grid-template-columns:1fr 1fr}.timing-question{padding:9px;gap:7px}.timing-answer-grid{gap:5px}.support-actions{gap:5px}.support-actions .ghost{font-size:.67rem;padding:7px}.own-goal{grid-template-columns:.8fr 1.4fr;padding:8px;gap:7px}.own-goal label span{font-size:.68rem}.own-goal input{height:42px;font-size:.72rem}.goal-screen .lead{font-size:.85rem}.goal-screen .copy{font-size:.72rem}.goal-screen .actions{margin-top:6px}}
+
+/* =========================================================
+   ITERATION 5 — CLEAR INTERACTIVE / YOUR TURN STATES
+   ========================================================= */
+.screen-shell.activity-shell{
+  background:#e7f1f5;
+  border:2px solid #97b8c8;
+  box-shadow:0 24px 70px rgba(0,0,0,.28), inset 0 0 0 1px rgba(255,255,255,.65);
+}
+.activity-shell .content-pad{
+  background:linear-gradient(145deg,#edf6f8 0%,#e5f0f4 100%);
+  border-radius:16px;
+}
+.activity-kicker{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  padding:6px 10px;
+  margin-bottom:8px;
+  border-radius:999px;
+  background:var(--navy);
+  color:#fff;
+  letter-spacing:.13em;
+}
+.activity-instruction{
+  margin:4px 0 14px;
+  font-size:clamp(.9rem,1.3vw,1.08rem);
+  line-height:1.45;
+  color:#344354;
+}
+.activity-instruction strong{color:var(--ink)}
+.activity-instruction span{font-size:.92em;color:#526270}
+.activity-shell .builder-step,
+.activity-shell .timing-question,
+.activity-shell .sequence-options,
+.activity-shell .sequence-slots,
+.activity-shell .own-goal{
+  background:rgba(255,255,255,.72);
+}
+.activity-shell .choice,
+.activity-shell .transfer-card,
+.activity-shell .own-goal{
+  border-color:#9eb7c4;
+}
+.activity-shell .choice:not(:disabled):hover,
+.activity-shell .transfer-card:not(:disabled):hover{
+  border-color:var(--navy);
+  box-shadow:0 0 0 3px rgba(12,29,52,.08);
+}
+.activity-shell .primary{box-shadow:0 4px 0 rgba(4,13,24,.15)}
+.activity-shell .topic-banner{background:#d5e8ef;border-color:#9bbbc8;color:#173047}
+.activity-shell .slot{background:#f8fcfd;border-color:#8faeba}
+.activity-shell .slot.filled{background:#e4f3ea;border-color:#5f9c7b}
+.activity-shell .preview{background:#0f2944;color:white;border-color:#0f2944}
+
+/* Use the same close-up portrait on both welcome screens. */
+.registration-visual img{max-width:82%;max-height:88%;object-fit:contain}
+
+@media(max-width:700px){
+  .activity-kicker{font-size:.5rem;padding:4px 7px;margin-bottom:4px}
+  .activity-instruction{font-size:.68rem;line-height:1.3;margin:2px 0 7px}
+  .registration-visual img{max-width:96%;max-height:92%}
+}
+/* Registration portrait also stays on the same light image card as the transmission portrait. */
+.registration-visual .asset-card{
+  background:#fffdf8!important;
+  border:1px solid #dfddd5!important;
+  border-radius:16px!important;
+  padding:clamp(10px,1.6vw,20px)!important;
+}
