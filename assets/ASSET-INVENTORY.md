@@ -1,8 +1,6 @@
-# GLORB Conversation Mission Asset Inventory
+# GLORB Conversation Mission — Updated Asset Inventory
 
-This rebuild now uses the updated asset pack supplied as `GLORB CONVERSATION MISSION .zip`.
-
-## Semantic UI asset mapping
+The active build uses the latest uploaded `GLORB CONVERSATION MISSION .zip` asset pack.
 
 - 1.png → glorb-full.png
 - 2.png → glorb-portrait.png
@@ -25,4 +23,4 @@ This rebuild now uses the updated asset pack supplied as `GLORB CONVERSATION MIS
 - 19.png → icon-finish.png
 - 20.png → icon-exit.png
 
-The original uploaded numbered assets are also preserved in `assets/updated-asset-library/`.
+All lesson illustrations sit on white, cream or other light asset cards. The original numbered files are preserved in `assets/updated-asset-library/`.
