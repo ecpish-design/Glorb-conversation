@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#15253d" />
+  <title>GLORB // Conversation Mission</title>
+  <meta name="description" content="An explicit-teaching and structured-practice resource for starting, joining and ending conversations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to lesson</a>
+  <header class="topbar">
+    <div class="brand">GLORB <span>//</span> CONVERSATION MISSION</div>
+    <div class="tools" aria-label="Lesson tools">
+      <button id="readBtn" class="tool-btn" type="button">🔊 Read aloud</button>
+      <button id="helpBtn" class="tool-btn" type="button">? Help</button>
+      <button id="infoBtn" class="tool-btn" type="button">ⓘ More information</button>
+    </div>
+  </header>
+
+  <div class="progress-shell" aria-label="Mission progress">
+    <div class="progress-meta"><span id="progressLabel">ORIENTATION</span><span id="progressCount">0 / 3 missions complete</span></div>
+    <div class="progress-track" aria-hidden="true"><div id="progressFill"></div></div>
+  </div>
+
+  <main id="main" tabindex="-1" class="app-shell"></main>
+
+  <div id="live" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+  <dialog id="helpDialog" class="dialog">
+    <div class="dialog-head"><div><div class="eyebrow">HELP</div><h2>Need a clue?</h2></div><button class="icon-close" data-close="helpDialog" aria-label="Close help">×</button></div>
+    <div id="helpContent" class="dialog-body"></div>
+  </dialog>
+
+  <dialog id="infoDialog" class="dialog info-dialog">
+    <div class="dialog-head"><div><div class="eyebrow">FOR ADULTS</div><h2>About the Conversation Mission</h2></div><button class="icon-close" data-close="infoDialog" aria-label="Close more information">×</button></div>
+    <div class="tabs" role="tablist" aria-label="Adult information sections">
+      <button class="tab active" data-tab="about" role="tab" aria-selected="true">About</button>
+      <button class="tab" data-tab="learning" role="tab">Learning</button>
+      <button class="tab" data-tab="curriculum" role="tab">Curriculum</button>
+      <button class="tab" data-tab="evidence" role="tab">Evidence</button>
+      <button class="tab" data-tab="use" role="tab">Use + interpretation</button>
+      <button class="tab" data-tab="references" role="tab">References</button>
+    </div>
+    <div id="infoContent" class="dialog-body info-body"></div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
