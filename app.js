@@ -65,7 +65,32 @@ function setProgress(label,count,pct){$('#progressLabel').textContent=label;$('#
 function focusHeading(){setTimeout(()=>{$('h1',app)?.focus({preventScroll:true})},20)}
 function announce(t){live.textContent='';setTimeout(()=>live.textContent=t,20)}
 
-function registration(){setTimeout(()=>{$('#begin').onclick=()=>{const v=$('#learnerName').value.trim();if(!v){announce('Enter your name before beginning.');$('#learnerName').focus();return}state.name=v;go(1)}},0);return shell(content(`<div class="registration"><div class="registration-card"><div class="eyebrow dark">EARTH EXPERT REGISTRATION</div><h1 tabindex="-1">Hi, I’m Glorb.</h1><p class="lead">I’m visiting Earth from <strong>Planet Zorbax-9</strong> to study how humans behave.</p><p class="lead registration-problem">There is one problem: <strong>human conversations are confusing.</strong> I need your help.</p><div class="name-field"><label for="learnerName">What should I call you?</label><input id="learnerName" maxlength="30" autocomplete="given-name" placeholder="Enter your first name" value="${esc(state.name)}"></div><div class="actions">${btn('Begin mission','begin','primary')}</div></div><div class="registration-visual">${asset(A+'glorb-portrait.png','Portrait of Glorb')}</div></div>`),'dark')}
+function registration(){
+  setTimeout(()=>{
+    $('#begin').onclick=()=>{
+      const v=$('#learnerName').value.trim();
+      if(!v){announce('Enter your name before opening the transmission.');$('#learnerName').focus();return}
+      state.name=v;go(1)
+    };
+    $('#learnerName').addEventListener('keydown',e=>{if(e.key==='Enter')$('#begin').click()});
+  },0);
+  return `<section class="screen landing-screen" data-readable>
+    <div class="landing-frame">
+      <div class="landing-copy">
+        <div class="eyebrow landing-eyebrow">INCOMING TRANSMISSION</div>
+        <h1 tabindex="-1" class="landing-title">GLORB &amp; THE<br>CONVERSATION<br>MISSION</h1>
+        <div class="landing-signal" aria-hidden="true"><span>SIGNAL</span><div class="landing-signal-track"><div></div></div></div>
+        <p class="landing-decoded">Transmission decoded.</p>
+        <div class="landing-name">
+          <label for="learnerName">EARTH EXPERT NAME</label>
+          <input id="learnerName" maxlength="30" autocomplete="given-name" placeholder="Enter your first name" value="${esc(state.name)}">
+        </div>
+        <button id="begin" class="landing-button" type="button">OPEN TRANSMISSION</button>
+      </div>
+      <img class="landing-glorb" src="assets/landing/conversation-cover.png" alt="Glorb smiling">
+    </div>
+  </section>`
+}
 function radar(){setTimeout(()=>{$('#radarNext').onclick=()=>go(2)},0);return shell(content(`<div class="radar-layout"><div class="eyebrow">ZORBAX-9 // CONNECTION</div><h1 tabindex="-1">Incoming transmission</h1><div class="radar" aria-hidden="true"><div class="radar-sweep"></div><span class="blip b1"></span><span class="blip b2"></span><span class="blip b3"></span></div><div class="signal-row"><span>SEARCHING</span><div class="signal-track"><div class="signal-fill"></div></div><span>SIGNAL FOUND</span></div><div class="actions" style="justify-content:center">${btn('Open transmission','radarNext','primary orange')}</div></div>`),'dark')}
 function orientation(){return shell(content(`<div class="transmission"><div>${asset(A+'glorb-portrait.png','Portrait of Glorb')}</div><div class="transmission-copy"><div class="eyebrow orange">INCOMING TRANSMISSION</div><h1 tabindex="-1">Hello, ${esc(state.name||'Earth Expert')}.</h1><p class="lead">I have three Earth conversation incidents I need help with.</p><p class="copy">Glorb has three Earth conversation problems. You’ll see what happened, help him work out what went wrong, and show him what to try next.</p>${actions('Open Incident 01',()=>go(3),'primary')}</div></div>`),'paper')}
 function story(incident,title,paras,quote,glorbLine,img,nextLabel,next){return `<section class="screen" data-readable><div class="screen-shell story-shell"><div class="story-copy"><div class="incident">INCIDENT ${incident}</div><h1 tabindex="-1">${title}</h1>${paras.map(p=>`<p class="copy">${p}</p>`).join('')}<div class="quote-box">${quote}</div>${glorbLine?note(glorbLine,true):''}${actions(nextLabel,next)}</div><div class="story-visual">${asset(img,title)}</div></div></section>`}
@@ -207,6 +232,7 @@ function toggleSpeech(){if(!('speechSynthesis'in window)){announce('Read aloud i
 function stopSpeech(){if('speechSynthesis'in window)speechSynthesis.cancel();const b=$('#readBtn');if(b)b.innerHTML='🔊 <span>Read aloud</span>'}
 function render(){
   const s=state.screen;
+  document.body.classList.toggle('landing-mode',s===0);
   if(s<=2)setProgress('ORIENTATION','0 / 3 missions complete',0);
   else if(s<=10)setProgress('MISSION 01 // START','0 / 3 missions complete',16);
   else if(s<=19)setProgress('MISSION 02 // JOIN','1 / 3 missions complete',42);
