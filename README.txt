@@ -1,20 +1,24 @@
-GLORB Conversation Mission — Landing Screen Patch
+GLORB // Conversation Mission — mobile responsive patch
 
-Upload these files to a NEW TEST BRANCH first.
+WHAT TO UPLOAD
+Replace ONLY the existing styles.css in your test branch with the styles.css in this folder.
 
-REPLACE:
-- app.js
-- styles.css
+You do NOT need to replace app.js.
+You do NOT need to upload or rename any assets.
 
-ADD ONLY THIS NEW ASSET:
-- assets/landing/conversation-cover.png
+WHAT THIS PATCH CHANGES
+- Desktop and iPad/tablet remain unchanged (mobile rules begin at 700px).
+- Phone toolbar buttons become compact icon-only circles while accessible text remains available to screen readers.
+- Landing content moves upward instead of sitting in the vertical centre of a tall phone screen.
+- The title, signal bar, name field and button scale for narrow phones.
+- The name input stays at 16px on phones to avoid iOS Safari input zoom.
+- Glorb stays inside the frame, is larger and more visible, and is no longer pushed mostly off the right edge.
+- Very narrow phones and landscape phones receive separate responsive layouts.
 
-Nothing else in the existing assets folder needs to be replaced or re-uploaded.
+TEST
+1. Upload styles.css to your test branch and commit.
+2. Wait for GitHub Pages to redeploy.
+3. Hard refresh on the phone / open a private tab if Safari is caching.
+4. Check portrait and landscape.
 
-What changes:
-- Screen 0 becomes the dark, brand-aligned Conversation Mission cover.
-- The name field remains on the landing screen so the existing personalised flow still works.
-- OPEN TRANSMISSION continues into the existing radar screen.
-- The progress strip, Back, Forward and Help are hidden only on screen 0.
-- Read aloud and More information remain available.
-- All screens after the landing screen are unchanged.
+No JavaScript or learning-flow logic is changed by this patch.
