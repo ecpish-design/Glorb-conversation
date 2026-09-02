@@ -1,20 +1,16 @@
-GLORB // Conversation Mission — Mobile landing v4
+GLORB // Conversation Mission — Mobile V5
 
-This is a CSS-only change.
+Replace ONLY styles.css on your EDITS-CONVERSATION test branch.
+Do not replace app.js and do not re-upload any assets.
 
-WHAT IT DOES ON PORTRAIT PHONES ONLY
-- Makes Glorb smaller.
-- Keeps Glorb at the top-right above the heading.
-- Prevents Glorb covering the mission title.
-- Shortens the landing frame so there is not a large empty area under the button.
-- Tightens title / signal / name / button spacing.
-- Keeps the mobile input at 16px to avoid iOS Safari input zoom.
+This pass changes portrait phones only (max-width: 700px):
+- shrink-wraps learner panels instead of stretching them to the full remaining viewport
+- removes large empty vertical gaps
+- gives the landing cover a dedicated top image band for Glorb
+- reduces Glorb and moves the title below him so they cannot overlap
+- stacks orientation, story, teaching, model, sequence, final mission and transfer layouts intentionally
+- keeps activity controls compact and touch-friendly
+- keeps Read Aloud / Help / Info as icon-only controls on phone
+- keeps desktop and iPad rules unchanged
 
-UNCHANGED
-- Desktop landing page.
-- iPad/tablet landing page.
-- App logic and navigation.
-- Existing assets.
-
-UPLOAD
-Replace styles.css on the test branch. Nothing else needs to be uploaded.
+MOBILE-V5-ONLY.css is included for inspection only; the complete replacement file is styles.css.
