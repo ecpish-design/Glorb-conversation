@@ -1,24 +1,20 @@
-GLORB // Conversation Mission — mobile responsive patch
+GLORB // Conversation Mission — Mobile landing v4
 
-WHAT TO UPLOAD
-Replace ONLY the existing styles.css in your test branch with the styles.css in this folder.
+This is a CSS-only change.
 
-You do NOT need to replace app.js.
-You do NOT need to upload or rename any assets.
+WHAT IT DOES ON PORTRAIT PHONES ONLY
+- Makes Glorb smaller.
+- Keeps Glorb at the top-right above the heading.
+- Prevents Glorb covering the mission title.
+- Shortens the landing frame so there is not a large empty area under the button.
+- Tightens title / signal / name / button spacing.
+- Keeps the mobile input at 16px to avoid iOS Safari input zoom.
 
-WHAT THIS PATCH CHANGES
-- Desktop and iPad/tablet remain unchanged (mobile rules begin at 700px).
-- Phone toolbar buttons become compact icon-only circles while accessible text remains available to screen readers.
-- Landing content moves upward instead of sitting in the vertical centre of a tall phone screen.
-- The title, signal bar, name field and button scale for narrow phones.
-- The name input stays at 16px on phones to avoid iOS Safari input zoom.
-- Glorb stays inside the frame, is larger and more visible, and is no longer pushed mostly off the right edge.
-- Very narrow phones and landscape phones receive separate responsive layouts.
+UNCHANGED
+- Desktop landing page.
+- iPad/tablet landing page.
+- App logic and navigation.
+- Existing assets.
 
-TEST
-1. Upload styles.css to your test branch and commit.
-2. Wait for GitHub Pages to redeploy.
-3. Hard refresh on the phone / open a private tab if Safari is caching.
-4. Check portrait and landscape.
-
-No JavaScript or learning-flow logic is changed by this patch.
+UPLOAD
+Replace styles.css on the test branch. Nothing else needs to be uploaded.

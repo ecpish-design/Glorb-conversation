@@ -1,0 +1,27 @@
+/* MOBILE V4 ONLY — paste at the very end of styles.css */
+@media (max-width:700px) and (orientation:portrait){
+  .landing-screen{align-items:flex-start;padding:7px}
+  .landing-frame{height:min(650px,100%);min-height:0}
+  .landing-copy{width:100%;height:100%;margin-left:0;padding:122px 24px 22px;justify-content:flex-start;align-items:center}
+  .landing-eyebrow{margin-bottom:10px;font-size:.52rem}
+  .landing-title{width:100%;max-width:350px;margin:0;font-size:clamp(2rem,9.4vw,2.55rem);line-height:.94}
+  .landing-signal{width:min(88%,350px);margin:19px auto 8px}
+  .landing-decoded{margin-bottom:10px}
+  .landing-name{width:min(88%,330px);margin-bottom:10px}
+  .landing-name input{height:48px;font-size:16px}
+  .landing-button{min-height:48px;padding:0 20px;font-size:.62rem}
+  .landing-glorb{top:18px;right:-10vw;bottom:auto;width:52vw;max-width:235px;max-height:none;height:auto;object-fit:contain;object-position:center top;z-index:4}
+}
+@media (max-width:430px) and (orientation:portrait){
+  .landing-frame{height:min(635px,100%)}
+  .landing-copy{padding-top:116px}
+  .landing-title{max-width:335px;font-size:clamp(1.95rem,9.6vw,2.42rem)}
+  .landing-glorb{top:16px;right:-9vw;width:50vw;max-width:215px}
+}
+@media (max-width:375px) and (orientation:portrait){
+  .landing-frame{height:min(610px,100%)}
+  .landing-copy{padding:108px 18px 18px}
+  .landing-title{max-width:310px;font-size:clamp(1.78rem,9.3vw,2.18rem)}
+  .landing-signal{margin-top:15px}
+  .landing-glorb{top:14px;right:-10vw;width:50vw;max-width:195px}
+}
