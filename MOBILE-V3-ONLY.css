@@ -1,0 +1,23 @@
+/* Phone-only override. Paste at the VERY END of styles.css if you prefer not to replace the full stylesheet. */
+@media (max-width:700px) and (orientation:portrait){
+  .landing-glorb{
+    top:clamp(26px,4.2vh,42px);
+    bottom:auto;
+    right:-18vw;
+    width:70vw;
+    max-width:none;
+    max-height:none;
+    height:auto;
+    object-fit:contain;
+    object-position:center top;
+    z-index:4;
+  }
+  .landing-copy{padding-top:clamp(66px,8.2vh,82px)}
+}
+@media (max-width:430px) and (orientation:portrait){
+  .landing-glorb{top:clamp(24px,3.8vh,36px);right:-19vw;width:72vw}
+  .landing-copy{padding-top:clamp(64px,8vh,78px)}
+}
+@media (max-width:360px) and (orientation:portrait){
+  .landing-glorb{right:-21vw;width:76vw}
+}
