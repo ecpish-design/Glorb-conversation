@@ -1,0 +1,196 @@
+/* =========================================================
+   ITERATION 6 — MOBILE RESPONSIVE POLISH
+   Mobile-only overrides. Desktop and iPad/tablet layouts stay unchanged.
+   ========================================================= */
+
+/* Keep mobile top-bar controls compact while retaining accessible labels. */
+@media (max-width:700px){
+  .topbar{
+    padding:0 10px;
+    gap:8px;
+  }
+  .brand{
+    flex:1 1 auto;
+    min-width:0;
+    max-width:calc(100% - 104px);
+    font-size:.54rem;
+    line-height:1.2;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .tools{
+    flex:0 0 auto;
+    gap:6px;
+    align-items:center;
+  }
+  .tool-btn{
+    position:relative;
+    width:44px;
+    min-width:44px;
+    height:44px;
+    padding:0;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    font-size:1rem;
+    line-height:1;
+  }
+  /* Visually hide button wording on phones, but keep it available to screen readers. */
+  .tool-btn span{
+    position:absolute!important;
+    width:1px!important;
+    height:1px!important;
+    padding:0!important;
+    margin:-1px!important;
+    overflow:hidden!important;
+    clip:rect(0,0,0,0)!important;
+    white-space:nowrap!important;
+    border:0!important;
+  }
+
+  /* -------- Landing screen: portrait phones -------- */
+  .landing-screen{
+    padding:8px;
+    align-items:stretch;
+  }
+  .landing-frame{
+    width:100%;
+    height:100%;
+    min-width:0;
+    min-height:0;
+    box-shadow:inset 0 0 0 9px rgba(6,19,36,.32);
+  }
+  .landing-frame::before{
+    inset:9px;
+  }
+  .landing-copy{
+    width:100%;
+    height:auto;
+    margin:0;
+    padding:clamp(42px,7vh,68px) 18px 0;
+    justify-content:flex-start;
+    align-items:center;
+    text-align:center;
+  }
+  .landing-eyebrow{
+    margin-bottom:10px;
+    font-size:.54rem;
+  }
+  .landing-title{
+    max-width:360px;
+    font-size:clamp(2rem,10vw,2.75rem);
+    line-height:.94;
+    letter-spacing:-.05em;
+  }
+  .landing-signal{
+    width:min(92%,360px);
+    margin:18px auto 8px;
+    grid-template-columns:auto 1fr;
+    gap:8px;
+    font-size:.52rem;
+  }
+  .landing-signal-track{
+    height:10px;
+  }
+  .landing-signal-track>div{
+    background:repeating-linear-gradient(90deg,var(--orange) 0 15px,transparent 15px 19px);
+  }
+  .landing-decoded{
+    margin-bottom:9px;
+    font-size:.66rem;
+  }
+  .landing-name{
+    width:min(88%,330px);
+    gap:5px;
+    margin-bottom:10px;
+  }
+  .landing-name label{
+    font-size:.52rem;
+  }
+  .landing-name input{
+    height:48px;
+    padding:0 12px;
+    font-size:16px; /* prevents iOS Safari zoom on focus */
+  }
+  .landing-button{
+    min-height:48px;
+    padding:0 20px;
+    font-size:.65rem;
+  }
+  /* The source PNG has transparent space on its left, so give the image
+     enough width and keep it inside the frame instead of pushing it offscreen. */
+  .landing-glorb{
+    right:-4px;
+    bottom:-2px;
+    width:min(80vw,320px);
+    max-height:34%;
+    object-fit:contain;
+    object-position:right bottom;
+  }
+}
+
+/* Narrow phones: slightly tighter title/control spacing and a larger visible Glorb. */
+@media (max-width:430px){
+  .landing-copy{
+    padding:clamp(34px,5.5vh,54px) 14px 0;
+  }
+  .landing-title{
+    max-width:340px;
+    font-size:clamp(1.95rem,10.2vw,2.55rem);
+  }
+  .landing-signal{
+    margin-top:15px;
+  }
+  .landing-name{
+    width:min(90%,320px);
+  }
+  .landing-glorb{
+    right:-2px;
+    width:min(84vw,325px);
+    max-height:33%;
+  }
+}
+
+/* Very narrow phones. */
+@media (max-width:360px){
+  .topbar{padding:0 8px}
+  .brand{font-size:.49rem;max-width:calc(100% - 98px)}
+  .tool-btn{width:42px;min-width:42px;height:42px}
+  .landing-copy{padding:30px 12px 0}
+  .landing-title{font-size:clamp(1.8rem,10vw,2.25rem)}
+  .landing-signal{width:94%;margin-top:13px}
+  .landing-decoded{font-size:.61rem}
+  .landing-name{width:92%}
+  .landing-button{min-height:46px;padding:0 16px}
+  .landing-glorb{width:88vw;max-height:31%}
+}
+
+/* Landscape phones need a side-by-side composition to keep everything inside one viewport. */
+@media (max-width:700px) and (max-height:600px) and (orientation:landscape){
+  .landing-screen{padding:6px}
+  .landing-frame{box-shadow:inset 0 0 0 8px rgba(6,19,36,.32)}
+  .landing-frame::before{inset:8px}
+  .landing-copy{
+    width:68%;
+    height:100%;
+    margin-left:18px;
+    padding:10px 0;
+    justify-content:center;
+  }
+  .landing-eyebrow{margin-bottom:7px;font-size:.46rem}
+  .landing-title{font-size:clamp(1.65rem,6.2vw,2.45rem);max-width:520px}
+  .landing-signal{width:86%;margin:10px auto 5px;font-size:.46rem}
+  .landing-signal-track{height:8px}
+  .landing-decoded{font-size:.54rem;margin-bottom:5px}
+  .landing-name{width:min(78%,360px);margin-bottom:6px}
+  .landing-name label{font-size:.44rem}
+  .landing-name input{height:38px;font-size:16px}
+  .landing-button{min-height:38px;font-size:.54rem;padding:0 14px}
+  .landing-glorb{
+    right:-10px;
+    bottom:-2%;
+    width:min(44vw,300px);
+    max-height:88%;
+  }
+}

@@ -1,20 +1,16 @@
-GLORB Conversation Mission — Landing Screen Patch
+GLORB // Conversation Mission — Mobile V5
 
-Upload these files to a NEW TEST BRANCH first.
+Replace ONLY styles.css on your EDITS-CONVERSATION test branch.
+Do not replace app.js and do not re-upload any assets.
 
-REPLACE:
-- app.js
-- styles.css
+This pass changes portrait phones only (max-width: 700px):
+- shrink-wraps learner panels instead of stretching them to the full remaining viewport
+- removes large empty vertical gaps
+- gives the landing cover a dedicated top image band for Glorb
+- reduces Glorb and moves the title below him so they cannot overlap
+- stacks orientation, story, teaching, model, sequence, final mission and transfer layouts intentionally
+- keeps activity controls compact and touch-friendly
+- keeps Read Aloud / Help / Info as icon-only controls on phone
+- keeps desktop and iPad rules unchanged
 
-ADD ONLY THIS NEW ASSET:
-- assets/landing/conversation-cover.png
-
-Nothing else in the existing assets folder needs to be replaced or re-uploaded.
-
-What changes:
-- Screen 0 becomes the dark, brand-aligned Conversation Mission cover.
-- The name field remains on the landing screen so the existing personalised flow still works.
-- OPEN TRANSMISSION continues into the existing radar screen.
-- The progress strip, Back, Forward and Help are hidden only on screen 0.
-- Read aloud and More information remain available.
-- All screens after the landing screen are unchanged.
+MOBILE-V5-ONLY.css is included for inspection only; the complete replacement file is styles.css.
